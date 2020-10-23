@@ -50,4 +50,20 @@ def smallest(n):
 		iteration += 1
 	return a
 
+
 # print(smallest(10));
+
+def cycle_length(arr, item):
+	sorted_list = sorted(arr)
+	pos = arr.index(item)
+	cycles = 0
+
+	while arr[pos] != sorted_list[pos]:
+		cycles += 1
+		b = sorted_list.index(arr[pos])
+		arr[pos], arr[b] = arr[b], arr[pos]
+
+	return cycles
+	
+	
+# print(cycle_length([1, 5, 4, 3, 2, 6], 4))
